@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'org.junit.platform.gradle.plugin'
 
 /* ide */
 apply {
@@ -13,9 +12,6 @@ project.ext {
 }
 version = '1.0-SNAPSHOT'
 
-ext.junitJupiterVersion  = '5.0.1'
-ext.log4JVersion = '2.5'
-
 sourceCompatibility = targetCompatibility = 1.8
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
@@ -24,36 +20,29 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
-    }
 }
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-    testCompile "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
-    testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
-    testRuntime "org.apache.logging.log4j:log4j-core:${log4JVersion}"
-    testRuntime "org.apache.logging.log4j:log4j-jul:${log4JVersion}"
+test {
+    useJUnitPlatform()
 }
 
-junitPlatform {
-    logManager 'org.apache.logging.log4j.jul.LogManager'
-    filters {
-        engines {
-            include 'junit-jupiter'
-        }
-        tags {
-          exclude 'slow'
-        }
-        includeClassNamePattern '.*Test'
-    }
+dependencies {
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.3.2"
+    testCompile "org.junit.jupiter:junit-jupiter-params:5.3.2"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.3.2"
+
+    // JUnit4を使う場合
+//    testCompile "junit:junit:4.12"
+//    testRuntime "org.junit.vintage:junit-vintage-engine:5.3.2"
+
+    testRuntime "org.slf4f:slf4j-simple:1.7.25"
 }
+
 
 wrapper {
-    gradleVersion = "4.3"
+    gradleVersion = "4.10.2"
 }
