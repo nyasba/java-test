@@ -19,7 +19,7 @@ public class Era2Test {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"1989-01-08", "2019-04-30"})
+    @ValueSource(strings = {"1989-01-08", "2019-04-30", "2019-05-01"})
     @DisplayName("平成")
     void heisei(LocalDate date){
         Assertions.assertEquals(Era.平成, Era.from(date));
