@@ -1,0 +1,32 @@
+##################
+# common
+*.class
+*.jar
+
+##################
+# gradle
+
+.gradle/
+build/
+
+##################
+# maven
+
+target/
+
+##################
+# IntelliJ IDEA
+
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+##################
+# Eclipse
+.classpath
+.project
+.settings/
+
+.kotlintest
