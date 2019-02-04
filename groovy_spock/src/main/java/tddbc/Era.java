@@ -8,7 +8,7 @@ public enum Era {
     対象(LocalDate.of(1912,7,30),LocalDate.of(1926,12,24)),
     昭和(LocalDate.of(1926,12,25),LocalDate.of(1989,1,7)),
     平成(LocalDate.of(1989,1,8),LocalDate.of(2019,4,30)),
-    未定(LocalDate.of(2019,5,1),LocalDate.of(9999,12,31));
+    新元号(LocalDate.of(2019,5,1),LocalDate.of(9999,12,31));
 
     private final LocalDate startDate;
     private final LocalDate endDate;
