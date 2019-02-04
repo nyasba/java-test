@@ -1,7 +1,8 @@
 # Javaでのテストフレームワーク比較
 
-## Junit5
-
-TDDBCのテンプレートを使わせていただいています
+## [JUnit5](/java_junit5)
 https://github.com/nyasba/java-test/tree/master/java_junit5
 
+## [Spock](/groovy_spock)
+
+## [KotlinTest](/kotlin_test)
